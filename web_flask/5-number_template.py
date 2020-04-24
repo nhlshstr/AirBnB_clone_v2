@@ -2,7 +2,8 @@
 """
 Starts a flask server
 """
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -42,7 +43,7 @@ def check_if_num(n):
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def html_func(n):
     """ HTML """
-    return (render_template("5-number.html", name=n))
+    return (render_template("5-number.html", n=n))
 
 
 if __name__ == "__main__":
