@@ -2,7 +2,8 @@
 """
 Starts a flask server
 """
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -48,7 +49,7 @@ def html_func(n):
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def check_odd_even(n):
     """ Checks if odd """
-    return (render_template("6-number_odd_or_even.html", num=n))
+    return (render_template("6-number_odd_or_even.html", n=n))
 
 
 if __name__ == "__main__":
